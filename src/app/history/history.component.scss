@@ -1,0 +1,34 @@
+h4 {
+    color: #00a8ff;
+}
+
+#chartVehicle, #chartDrowsiness {
+    margin: auto;
+}
+
+@media only screen and (min-width: 420px){
+    #chartVehicle {
+        width: 85%;
+    }
+    #chartDrowsiness {
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width: 780px){
+    #chartVehicle {
+        width: 75%;
+    }
+    #chartDrowsiness {
+        width: 75%;
+    }
+}
+
+@media only screen and (min-width: 1020px){
+    #chartVehicle {
+        width: 65%;
+    }
+    #chartDrowsiness {
+        width: 65%;
+    }
+}

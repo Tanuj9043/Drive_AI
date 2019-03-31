@@ -1,0 +1,11 @@
+Flask
+Flask-RESTful
+Flask-Cors
+numpy
+opencv-python-headless
+keras
+tensorflow
+pymongo[tls,srv]
+cmake
+imutils
+dlib

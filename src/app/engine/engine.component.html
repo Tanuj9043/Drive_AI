@@ -1,0 +1,35 @@
+<div class="container-well mt-4 pt-4">
+  <div class="container-well text-center func">
+    {{ functionality }}
+  </div>
+  <div class="container text-center mt-2 pt-2 moodText" *ngIf="frontCamera && mood">
+    You are looking <span class="mood">{{ mood }}</span>!
+  </div>
+  <div class="container-well mt-2 pt-2 text-center">
+    <webcam [height]="180" [width]="320" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+            *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)">
+    </webcam>
+  </div>
+  <div class="container mt-2 pt-2 text-center">
+    <button type="button" class="btn btn-outline-light" (click)="showNextWebcam(true)" [disabled]="!multipleWebcamsAvailable || mlEngine">Switch Camera</button>
+  </div>
+  <div class="container text-center">
+    <div class="container-well">
+      <button type="button" class="btn btn-outline-success m-3" (click)="startPipeline()" [disabled]="mlEngine">START</button>
+      <button type="button" class="btn btn-outline-danger m-3" (click)="stopPipeline()" [disabled]="!mlEngine">STOP</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div>
+  {{ status }}
+</div> -->
+
+<!-- <div class="snapshot" *ngIf="webcamImage">
+  <ul>
+    <li *ngFor="let img of images">
+        <img [height]="90" [width]="160" [src]="img"/>
+    </li>
+  </ul>
+</div> -->
